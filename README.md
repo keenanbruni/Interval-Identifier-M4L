@@ -1,14 +1,18 @@
 # Interval Identifier (Max for Live)
 
-![Interval Identifier](https://i.imgur.com/lF83omR.png)
+![Interval Identifier](https://i.imgur.com/lpp3CRm.png)
 
 Great for studying and transcribing solos!
 
 - M4L device that detects incoming pitch and displays:
   - The detected note name (C–B)
   - The interval name relative to a selected key; key can be automated across regions to reflect chord changes
+  - Tuning accuracy via color-coded text and cents meter
 
-- It uses fzero~ for pitch detection, maps the pitch class to a note name, and maps the interval to a readable label (e.g., minor 3rd).
+- Features:
+  - Adjustable input threshold
+  - Clears display on silence
+  - Uses fzero~ for pitch detection, maps the pitch class to a note name, and maps the interval to a readable label (e.g., minor 3rd).
 
 
 Binary header note: .amxd files are JSON with a binary header/footer. If the JSON length changes, the `ptch` chunk size in the header must be updated to match the current JSON payload length (plus any trailing bytes). A mismatch can cause Ableton/Max to report “Device file broken.” LLMs will need to know this context when building Max for Live devices.
