@@ -33,6 +33,101 @@
     "boxes": [
       {
         "box": {
+          "id": "obj-128",
+          "maxclass": "live.toggle",
+          "numinlets": 1,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "parameter_enable": 1,
+          "patching_rect": [
+            200.0,
+            230.0,
+            24.0,
+            24.0
+          ],
+          "presentation": 1,
+          "presentation_rect": [
+            130.0,
+            132.0,
+            24.0,
+            20.0
+          ],
+          "saved_attribute_attributes": {
+            "valueof": {
+              "parameter_longname": "Hold",
+              "parameter_shortname": "Hold",
+              "parameter_type": 2,
+              "parameter_mmax": 1,
+              "parameter_enum": ["Off", "On"]
+            }
+          },
+          "varname": "live.toggle"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-129",
+          "maxclass": "comment",
+          "numinlets": 1,
+          "numoutlets": 0,
+          "patching_rect": [
+            130.0,
+            134.0,
+            30.0,
+            16.0
+          ],
+          "presentation": 1,
+          "presentation_rect": [
+            130.0,
+            118.0,
+            30.0,
+            14.0
+          ],
+          "text": "Hold",
+          "fontsize": 8.0,
+          "fontname": "Ableton Sans Medium Regular"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-130",
+          "maxclass": "newobj",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            "int"
+          ],
+          "patching_rect": [
+            200.0,
+            260.0,
+            32.0,
+            20.0
+          ],
+          "text": "== 0"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-131",
+          "maxclass": "newobj",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            252.43701869249344,
+            260.0,
+            40.0,
+            20.0
+          ],
+          "text": "gate"
+        }
+      },
+      {
+        "box": {
           "id": "obj-102",
           "maxclass": "comment",
           "numinlets": 1,
@@ -1547,8 +1642,8 @@
       {
         "patchline": {
           "destination": [
-            "obj-101",
-            0
+            "obj-131",
+            1
           ],
           "source": [
             "obj-100",
@@ -2264,6 +2359,42 @@
             0
           ]
         }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-128",
+            0
+          ],
+          "destination": [
+            "obj-130",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-130",
+            0
+          ],
+          "destination": [
+            "obj-131",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-131",
+            0
+          ],
+          "destination": [
+            "obj-101",
+            0
+          ]
+        }
       }
     ],
     "parameters": {
@@ -2275,6 +2406,11 @@
       "obj-103": [
         "Threshold",
         "Threshold",
+        0
+      ],
+      "obj-128": [
+        "Hold",
+        "Hold",
         0
       ],
       "parameterbanks": {
